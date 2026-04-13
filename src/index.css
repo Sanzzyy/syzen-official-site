@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-black dark:bg-[#0a0a0a] dark:text-white transition-colors duration-300;
+}
+
+.montserrat {
+  font-family: "Montserrat", system-ui;
+  font-weight: bold;
+}

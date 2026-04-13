@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font Styling (Opsional jika ingin custom) */
+  /* --font-sans: "Inter", ui-sans-serif, system; */
+}
+
+body {
+  @apply bg-coffee-cream antialiased;
+}
