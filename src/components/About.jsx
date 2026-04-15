@@ -7,8 +7,7 @@ export default function About() {
 
   const aboutData = [
     {
-      title: "Siapa Saya?",
-      // Menambahkan icon SVG inline agar tidak perlu install library tambahan
+      title: "Siapa di Balik Syzen.web?",
       icon: (
         <svg
           className="w-6 h-6"
@@ -25,10 +24,10 @@ export default function About() {
         </svg>
       ),
       content:
-        "Halo, saya Muhammad Sajid Izzulhaq. Saat ini saya adalah mahasiswa Teknik Informatika di Universitas Teknokrat Indonesia. Saya memiliki passion besar dalam membangun website modern yang tidak hanya estetik, tapi juga memberikan solusi nyata untuk efisiensi bisnis Anda.",
+        "Halo, saya Muhammad Sajid Izzulhaq. Berbekal latar belakang di bidang Teknik Informatika, fokus utama saya adalah membantu pemilik UMKM dan bisnis lokal untuk melangkah ke dunia digital. Saya percaya bahwa website yang baik bukan sekadar tampil menarik, tapi harus bisa menjadi solusi yang memudahkan operasional dan mendukung pertumbuhan bisnis Anda.",
     },
     {
-      title: "Aktivitas & Peran",
+      title: "Komitmen & Pendekatan Kerja",
       icon: (
         <svg
           className="w-6 h-6"
@@ -45,10 +44,10 @@ export default function About() {
         </svg>
       ),
       content:
-        "Di luar pengerjaan proyek klien, saya aktif sebagai Tutor di organisasi Protek Web, di mana saya membimbing rekan-rekan mahasiswa dalam praktik pengembangan web. Saya juga rutin membagikan tips coding dan edukasi teknologi kepada ribuan pengikut di TikTok (@syzen.web).",
+        "Saya mengedepankan komunikasi yang transparan, ramah, dan kolaboratif. Bekerja sama dengan saya berarti Anda berdiskusi langsung dengan pengembangnya. Saya siap mendengarkan visi bisnis Anda, menjelaskan hal teknis dengan bahasa yang mudah dipahami, dan memastikan website selesai tepat waktu sesuai kebutuhan.",
     },
     {
-      title: "Workflow & Teknologi",
+      title: "Standar Teknologi & Efisiensi",
       icon: (
         <svg
           className="w-6 h-6"
@@ -65,7 +64,7 @@ export default function About() {
         </svg>
       ),
       content:
-        "Saya berfokus pada ekosistem modern seperti React, Next.js, Tailwind CSS, dan Laravel. Untuk memastikan pengerjaan aplikasi Anda selesai lebih cepat dengan kualitas enterprise, saya mengadopsi alur kerja berbasis AI terkini.",
+        "Website Anda akan dibangun menggunakan teknologi modern (seperti React, Tailwind, dan Laravel) yang terbukti stabil dan aman. Dipadukan dengan alur kerja berbasis AI terkini, proses pengerjaan menjadi jauh lebih efisien. Hasilnya, Anda mendapatkan website yang cepat, responsif, dan siap bersaing di era digital.",
     },
   ];
 
@@ -80,7 +79,7 @@ export default function About() {
         {/* Header Section */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
-            Kenapa Harus Syzen.web?
+            About Me
           </h2>
           <div className="h-1 w-20 bg-black dark:bg-white mt-4"></div>
         </div>

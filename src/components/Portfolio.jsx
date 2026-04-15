@@ -50,7 +50,7 @@ export default function Portfolio() {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div>
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
-            Karya Terpilih
+            Portfolio
           </h2>
           <div className="h-1 w-20 bg-black dark:bg-white mt-4"></div>
           <p className="text-gray-500 dark:text-gray-400 mt-6 md:mt-4 text-lg">

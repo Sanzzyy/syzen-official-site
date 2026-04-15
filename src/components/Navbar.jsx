@@ -40,7 +40,7 @@ export default function Navbar() {
           <ThemeToggle />
 
           <a
-            href="https://wa.me/your-number"
+            href={`https://wa.me/6282279773535?text=Halo%20Kak%20Sajid,%20saya%20tertarik%20dengan%20paket%20pembuatan%20web%20*.%20Bisa%20minta%20info%20lebih%20lanjut?`}
             className="bg-black dark:bg-white text-white dark:text-black px-6 py-2.5 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-all shadow-md hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Konsultasi Gratis
