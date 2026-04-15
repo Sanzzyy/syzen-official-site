@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="py-32 px-6 max-w-5xl mx-auto text-center">
+    <section className="py-28 px-6 max-w-5xl mx-auto text-center">
       <div className="flex flex-col items-center">
         {/* Headline dengan Avatar Inline */}
         <h1 className="montserrat text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight md:leading-[1.1] tracking-tight text-black dark:text-white">
@@ -31,19 +31,88 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`https://wa.me/6282279773535?text=Halo%20Kak%20Sajid,%20saya%20tertarik%20dengan%20paket%20pembuatan%20web%20*.%20Bisa%20minta%20info%20lebih%20lanjut?`}
-            className="px-10 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-2xl shadow-2xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:-translate-y-1"
-          >
-            Mulai Konsultasi
-          </a>
-          <a
-            href="#portfolio"
-            className="px-10 py-4 border-2 border-gray-200 dark:border-gray-700 text-black dark:text-white font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
-          >
-            Lihat Project
-          </a>
+        <div className="mt-12 flex flex-col items-center gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            {/* Secondary Button */}
+            <a
+              href={`https://wa.me/6282279773535?text=Halo%20Kak%20Sajid,%20saya%20tertarik%20dengan%20paket%20pembuatan%20web%20*.%20Bisa%20minta%20info%20lebih%20lanjut?`}
+              className="group px-10 py-4 border-2 border-gray-200 bg-black dark:bg-white dark:border-gray-800 text-white dark:text-black font-bold rounded-2xl hover:bg-dark dark:hover:bg-white transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              Mulai Konsultasi
+              {/* Arrow Icon yang bergerak ke bawah saat hover */}
+              <svg
+                className="w-5 h-5 relative z-10 transform transition-transform duration-300 group-hover:translate-x-1 text-gray-400 group-hover:text-white dark:group-hover:text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+            {/* Secondary Button */}
+            <a
+              href="#portfolio"
+              className="group px-10 py-4 border-2 border-gray-200 dark:border-gray-800 text-black dark:text-white font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-[#111111] transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              Lihat Project
+              {/* Arrow Icon yang bergerak ke bawah saat hover */}
+              <svg
+                className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-y-1 text-gray-400 group-hover:text-black dark:group-hover:text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          {/* Trust Indicators (Microcopy untuk meyakinkan klien) */}
+          <div className="flex items-center gap-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-1.5">
+              <svg
+                className="w-4 h-4 text-green-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={3}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              Konsultasi Gratis
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+            <div className="flex items-center gap-1.5">
+              <svg
+                className="w-4 h-4 text-blue-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              Respon Cepat
+            </div>
+          </div>
         </div>
       </div>
     </section>

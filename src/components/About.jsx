@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 export default function About() {
+  // State untuk melacak dropdown mana yang sedang terbuka
+  // Nilai 0 berarti elemen pertama (Siapa Saya?) akan terbuka secara default
   const [openIndex, setOpenIndex] = useState(0);
 
   const aboutData = [
@@ -68,12 +70,13 @@ export default function About() {
   ];
 
   const toggleDropdown = (index) => {
+    // Jika yang diklik sudah terbuka, maka tutup. Jika belum, buka yang diklik.
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <section id="about" className="py-24 bg-white dark:bg-[#0a0a0a]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         {/* Header Section */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
@@ -83,19 +86,18 @@ export default function About() {
         </div>
 
         {/* Layout 2 Kolom */}
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Kolom Kiri: Gambar */}
-          <div className="relative group mx-auto w-full max-w-md md:max-w-full">
-            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 translate-x-4 translate-y-4 rounded-2xl transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
-            <div className="relative aspect-[4/5] rounded-2xl bg-gray-100 dark:bg-gray-900 overflow-hidden border border-gray-200 dark:border-gray-800 shadow-xl">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 translate-x-4 translate-y-4 rounded-2xl transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            <div className="relative aspect-[4/5] rounded-2xl bg-gray-100 dark:bg-gray-900 overflow-hidden border border-gray-200 dark:border-gray-800">
               <img
-                src="/img/foto_saya.jpeg"
+                src="/img/foto_saya.jpeg" // Pastikan path ini sesuai dengan foto aslimu
                 alt="Muhammad Sajid Izzulhaq"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </div>
-
           {/* Kolom Kanan: Accordion / Dropdown */}
           <div className="flex flex-col justify-center h-full">
             <div className="space-y-2">
