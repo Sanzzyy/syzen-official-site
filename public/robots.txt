@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://syzen-official.my.id/sitemap.xml
