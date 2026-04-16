@@ -12,13 +12,23 @@ export default function Portfolio() {
       image: "/img/projects/project_1.png",
     },
     {
+      title: "Web Hotel Profesional",
+      desc: "Website hotel modern dengan tampilan elegan yang dirancang untuk meningkatkan kepercayaan pelanggan, menampilkan informasi kamar, fasilitas, serta sistem reservasi yang mudah digunakan.",
+      image: "/img/projects/project_7.png",
+    },
+    {
+      title: "Web E-Commerce",
+      desc: "Platform toko online dengan desain modern yang menampilkan produk secara menarik, dilengkapi fitur katalog, detail produk, dan pengalaman belanja yang responsif.",
+      image: "/img/projects/project_8.png",
+    },
+    {
       title: "Remake Aplikasi Mengelola Keuangan",
       desc: "Remake aplikasi pencatat keuangan pribadi yang cerdas, ditingkatkan dengan Supabase untuk manajemen data yang andal dan antarmuka pengguna yang sangat responsif.",
       image: "/img/projects/project_2.png",
     },
     {
       title: "Sistem Input Matakuliah",
-      desc: "Aplikasi web dinamis yang dirancang untuk membantu mahasiswa memasukkan, mengelola, dan mengatur jadwal kuliah mereka secara efisien.",
+      desc: "Aplikasi web dinamis yang dirancang untuk membantu saya memasukkan, mengelola, dan mengatur jadwal kuliah saya secara efisien.",
       image: "/img/projects/project_3.png",
     },
     {
