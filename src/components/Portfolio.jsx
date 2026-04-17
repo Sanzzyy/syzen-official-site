@@ -17,6 +17,11 @@ export default function Portfolio() {
       image: "/img/projects/project_7.png",
     },
     {
+      title: "Web Taman Satwa",
+      desc: "Website Taman Satwa profesional dengan desain modern yang menampilkan produk secara menarik, dilengkapi fitur katalog, detail produk, dan pengalaman belanja yang responsif.",
+      image: "/img/projects/project_9.png",
+    },
+    {
       title: "Web E-Commerce",
       desc: "Platform toko online dengan desain modern yang menampilkan produk secara menarik, dilengkapi fitur katalog, detail produk, dan pengalaman belanja yang responsif.",
       image: "/img/projects/project_8.png",

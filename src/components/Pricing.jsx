@@ -7,22 +7,23 @@ export default function Pricing() {
     "Company Profile": [
       {
         name: "Basic",
-        price: "1.800.000",
+        originalPrice: "1.800.000",
+        price: "800.000",
         description: "Landing page tunggal untuk profil bisnis ringkas.",
         features: [
-          "Free Domain (.com)",
           "Desain Maksimal 4 Halaman",
           "Responsif di Semua Perangkat",
           "Form Kontak Langsung ke WhatsApp",
           "Gratis Hosting & Subdomain 1 Tahun",
           "Garansi Maintenance 15 Hari",
-          "Video Panduan Akses Website",
+          "Panduan Akses Website",
         ],
         isPopular: false,
       },
       {
         name: "Profesional",
-        price: "2.500.000",
+        originalPrice: "2.800.000",
+        price: "1.500.000",
         description: "Website multi-halaman untuk perusahaan menengah.",
         features: [
           "Free Domain (.com)",
@@ -36,6 +37,7 @@ export default function Pricing() {
       },
       {
         name: "Enterprise",
+        originalPrice: "6.500.000",
         price: "4.500.000",
         description: "Custom web dengan CMS khusus untuk corporate.",
         features: [
@@ -53,6 +55,7 @@ export default function Pricing() {
     "Toko Online": [
       {
         name: "Starter Store",
+        originalPrice: "3.800.000",
         price: "2.500.000",
         description: "Katalog online simpel dengan checkout via WA.",
         features: [
@@ -68,6 +71,7 @@ export default function Pricing() {
       },
       {
         name: "Pro Store",
+        originalPrice: "7.500.000",
         price: "5.000.000",
         description: "Toko online otomatis dengan integrasi kurir & bayar.",
         features: [
@@ -81,6 +85,25 @@ export default function Pricing() {
         isPopular: true,
       },
     ],
+
+    "Website Custom": [
+      {
+        name: "Custom Development",
+        originalPrice: "15.000.000",
+        price: "10.000.000",
+        description:
+          "Solusi website kompleks (Sistem Booking, Portal Berita, Web App Khusus).",
+        features: [
+          "Desain UI/UX Eksklusif",
+          "Sistem Database ",
+          "Dashboard Admin Panel Khusus",
+          "Keamanan Tingkat Lanjut (SSL Pro)",
+          "Priority Maintenance & Support 3 Bulan",
+          "Penyerahan Source Code Penuh",
+        ],
+        isPopular: true,
+      },
+    ],
   };
 
   return (
@@ -88,11 +111,15 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-block bg-red-500/10 border border-red-500/50 text-red-500 px-5 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-widest mb-6 animate-pulse">
+            🔥 DISKON SPESIAL BERLAKU 3 HARI
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Harga
+            Harga Layanan
           </h2>
           <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-            Pilih kategori layanan, lalu temukan paket yang paling sesuai.
+            Pilih kategori layanan, lalu temukan paket yang paling sesuai
+            sebelum promo berakhir.
           </p>
         </div>
 
@@ -113,13 +140,15 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Pricing Cards (Layout Dinamis: Jika isinya 2, akan dipusatkan) */}
+        {/* Pricing Cards */}
         <div
           key={activeTab}
           className={`grid gap-8 items-center animate-fade-in-up mx-auto ${
-            pricingData[activeTab].length === 2
-              ? "md:grid-cols-2 max-w-4xl" // Jika 2 paket (Toko Online)
-              : "md:grid-cols-3 max-w-6xl" // Jika 3 paket (Company Profile)
+            pricingData[activeTab].length === 1
+              ? "md:grid-cols-1 max-w-md"
+              : pricingData[activeTab].length === 2
+                ? "md:grid-cols-2 max-w-4xl"
+                : "md:grid-cols-3 max-w-6xl"
           }`}
         >
           {pricingData[activeTab].map((plan, index) => (
@@ -137,7 +166,7 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="mb-8">
+              <div className="mb-6">
                 <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
                 <p
                   className={`text-sm leading-relaxed min-h-[40px] ${
@@ -150,9 +179,10 @@ export default function Pricing() {
                 </p>
               </div>
 
-              <div className="mb-8">
+              {/* Tampilan Harga & Kupon yang Jauh Lebih Jelas */}
+              <div className="mb-8 flex flex-col">
                 <span
-                  className={`text-sm font-semibold ${
+                  className={`text-sm font-semibold mb-3 ${
                     plan.isPopular
                       ? "text-gray-500 dark:text-gray-400"
                       : "text-gray-400"
@@ -160,6 +190,23 @@ export default function Pricing() {
                 >
                   Mulai dari
                 </span>
+
+                {/* Kotak Kupon & Harga Coret */}
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <div className="bg-red-500/20 border border-dashed border-red-500 text-red-500 px-2 py-1 rounded-md text-xs font-bold tracking-wider">
+                    🎟️ PROMO
+                  </div>
+                  <span
+                    className={`text-lg font-semibold line-through ${
+                      plan.isPopular
+                        ? "text-gray-500 dark:text-gray-400"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Rp {plan.originalPrice}
+                  </span>
+                </div>
+
                 <div className="text-4xl lg:text-5xl font-bold mt-1 tracking-tight">
                   <span className="text-2xl align-top">Rp</span> {plan.price}
                 </div>
@@ -199,7 +246,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={`https://wa.me/6282279773535?text=Halo%20Kak%20Sajid,%20saya%20tertarik%20dengan%20Jasa%20Pembuatan%20*${activeTab}%20-%20Paket%20${plan.name}*.%20Bisa%20minta%20info%20lebih%20lanjut?`}
+                href={`https://wa.me/6282279773535?text=Halo%20Kak%20Sajid,%20saya%20tertarik%20dengan%20Promo%20Jasa%20Pembuatan%20*${activeTab}%20-%20Paket%20${plan.name}*.%20Bisa%20minta%20info%20lebih%20lanjut?`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block text-center py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 mt-auto ${
