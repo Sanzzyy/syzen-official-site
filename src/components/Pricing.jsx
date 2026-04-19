@@ -11,6 +11,7 @@ export default function Pricing() {
         originalPrice: "1.800.000",
         price: "800.000",
         features: [
+          "Single Page Website",
           "Desain Maksimal 4 Halaman",
           "Responsif di Semua Perangkat",
           "Form Kontak Langsung ke WhatsApp",
@@ -26,6 +27,7 @@ export default function Pricing() {
         price: "1.500.000",
         features: [
           "Free Domain (.com)",
+          "Multi Page Website",
           "Desain Maksimal 5-6 Halaman",
           "Desain Web Premium dan Clean",
           "Formulir Kontak Otomatis",
@@ -40,6 +42,7 @@ export default function Pricing() {
         price: "4.500.000",
         features: [
           "Free Domain (.com)",
+          "Multi Page Website",
           "Desain Halaman 5-6 (Bisa Request)",
           "Optimization Web (Lazy Load)",
           "Desain Interaktif",
@@ -209,7 +212,7 @@ export default function Pricing() {
                 >
                   Yang Anda Dapatkan:
                 </span>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6 mt-4">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-3">
                       <svg
