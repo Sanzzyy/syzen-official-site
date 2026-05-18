@@ -10,7 +10,7 @@ export default function ThemeToggle() {
         theme === "dark" ? "bg-gray-700" : "bg-gray-200"
       }`}
       aria-label="Toggle Dark Mode"
-    >
+      >
       <span className="sr-only">Toggle Dark Mode</span>
       <span
         className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform duration-300 flex items-center justify-center ${
