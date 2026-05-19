@@ -15,11 +15,70 @@ const {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="jasa pembuatan website, buat website murah, landing page bisnis, company profile perusahaan, jasa website profesional, syzen web, website cepat, website responsive, pembuatan web jakarta, jasa web indonesia" />
 		<meta name="theme-color" content="#FF653F" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://syzenweb.com/" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://syzenweb.com/assets/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://syzenweb.com/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://syzenweb.com/assets/og-image.png" />
+		
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Structured Data (JSON-LD) for Local Business / Professional Service -->
+		<script type="application/ld+json" is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Syzen Web",
+				"image": "https://syzenweb.com/assets/logo.png",
+				"@id": "https://syzenweb.com",
+				"url": "https://syzenweb.com",
+				"telephone": "+6282279773535",
+				"priceRange": "Rp 700.000 - Rp 3.500.000",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Jl. Gatsu",
+					"addressLocality": "Jakarta",
+					"addressRegion": "DKI Jakarta",
+					"postalCode": "10000",
+					"addressCountry": "ID"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -6.2088,
+					"longitude": 106.8456
+				},
+				"openingHoursSpecification": {
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday",
+						"Saturday"
+					],
+					"opens": "09:00",
+					"closes": "21:00"
+				},
+				"sameAs": [
+					"https://instagram.com/syzenweb"
+				],
+				"description": "Syzen Web menyediakan jasa pembuatan website modern, landing page bisnis berkonversi tinggi, dan company profile profesional yang cepat, responsive, dan terpercaya."
+			}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
