@@ -1,0 +1,131 @@
+---
+import { whatsappUrl } from "../../data/siteConfig";
+import { CheckCircle, MessageSquare, ArrowRight } from "lucide-react";
+---
+
+<section
+  class="section relative bg-transparent scroll-mt-24 md:scroll-mt-28 overflow-hidden py-24"
+  id="contact"
+>
+  {/* Glowing Aesthetic Backdrops */}
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-brand-coral/5 blur-[120px] rounded-full pointer-events-none -z-10"
+  >
+  </div>
+  <div
+    class="absolute bottom-4 right-10 w-72 h-72 bg-brand-gold/3 blur-[100px] rounded-full pointer-events-none -z-10"
+  >
+  </div>
+
+  <div class="container">
+    {/* Persuasive Glassmorphic Stage Box */}
+    <div
+      class="relative overflow-hidden border border-white/8 hover:border-brand-coral/25 transition-all duration-500 rounded-2xl bg-gradient-to-br from-[#27185e]/80 via-[#1E104E]/90 to-[#27185e]/80 p-8 md:p-14 shadow-[0_24px_50px_rgba(0,0,0,0.45)] reveal-on-scroll-scale"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14 items-center relative z-10"
+      >
+        {/* Left Side: Conversion Headings & Objection Busters */}
+        <div 
+          class="text-left"
+        >
+          <p class="section-kicker mb-2">Konsultasi Gratis</p>
+          <h2
+            class="text-[24px] sm:text-[32px] md:text-[38px] leading-tight font-extrabold text-white font-satoshi mb-4 tracking-tight"
+          >
+            Siap Melejitkan Penjualan dengan Website Standar Internasional?
+          </h2>
+          <p
+            class="text-slate-300 text-sm sm:text-base leading-relaxed font-inter mb-8 max-w-[580px]"
+          >
+            Jangan biarkan kompetitor merebut calon klien Anda. Diskusikan
+            konsep website impian Anda sekarang bersama tim kami secara gratis,
+            dan mulailah mendominasi pasar digital!
+          </p>
+
+          {/* Objection-Buster Benefit Checklist */}
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-center gap-2.5">
+              <CheckCircle className="text-brand-coral w-4 h-4 shrink-0" />
+              <span
+                class="text-slate-200 text-[13px] sm:text-[14px] font-semibold font-inter"
+                >Gratis Sesi Tanya Jawab & Konsep</span
+              >
+            </div>
+            <div class="flex items-center gap-2.5">
+              <CheckCircle className="text-brand-coral w-4 h-4 shrink-0" />
+              <span
+                class="text-slate-200 text-[13px] sm:text-[14px] font-semibold font-inter"
+                >Desain Custom & Estetika Premium</span
+              >
+            </div>
+            <div class="flex items-center gap-2.5">
+              <CheckCircle className="text-brand-coral w-4 h-4 shrink-0" />
+              <span
+                class="text-slate-200 text-[13px] sm:text-[14px] font-semibold font-inter"
+                >Kecepatan Tinggi & SEO Google Ready</span
+              >
+            </div>
+            <div class="flex items-center gap-2.5">
+              <CheckCircle className="text-brand-coral w-4 h-4 shrink-0" />
+              <span
+                class="text-slate-200 text-[13px] sm:text-[14px] font-semibold font-inter"
+                >Garansi Keamanan & Support Penuh</span
+              >
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side: Interactive Action Card */}
+        <div class="flex flex-col items-center lg:items-stretch justify-center">
+          <div
+            class="w-full max-w-[360px] mx-auto bg-white/[0.02] border border-white/6 p-6 sm:p-8 rounded-xl text-center backdrop-blur-md"
+          >
+            <p
+              class="text-slate-400 text-xs font-semibold font-inter uppercase tracking-widest mb-4"
+            >
+              Mulai Diskusi Sekarang
+            </p>
+
+            {/* WhatsApp Green & White Premium Pulsing Button */}
+            <a
+              class="whatsapp-btn flex items-center justify-center gap-2 w-full py-3 px-5 rounded-lg text-white font-semibold text-[13.5px] transition-all duration-300 select-none border border-emerald-500/20 shadow-sm hover:shadow-md hover:shadow-emerald-500/5"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageSquare
+                className="w-4 h-4 fill-white text-emerald-600 shrink-0"
+              />
+              <span>Tanya via WhatsApp</span>
+            </a>
+
+            <p
+              class="text-slate-400 text-[11px] font-medium font-inter mt-3.5 flex items-center justify-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"
+              ></span>
+              <span>Aktif 24/7 • Estimasi Balas &lt; 10 Menit</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .whatsapp-btn {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transition: all 0.25s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    transform: translateY(-1.5px);
+  }
+
+  .whatsapp-btn:active {
+    transform: translateY(0);
+  }
+</style>

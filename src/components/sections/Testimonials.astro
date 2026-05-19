@@ -1,0 +1,187 @@
+---
+import { testimonials } from "../../data/siteConfig";
+import { Star, ShieldCheck, Quote } from "lucide-react";
+---
+
+<section
+  class="section bg-transparent scroll-mt-24 md:scroll-mt-28 overflow-hidden"
+  id="testimonials"
+>
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 lg:gap-10 items-center"
+  >
+    {/* Left Column: Heading & Subtitle */}
+    <div
+      class="relative z-10 grid justify-items-start text-left max-w-[380px] pr-2 reveal-on-scroll-left"
+    >
+      <p class="section-kicker">Testimonials</p>
+      <h2 class="section-heading-h2">
+        Hasil Nyata yang Bicara, Kepuasan yang Bercerita.
+      </h2>
+      <p class="section-heading-p">
+        Lihat bagaimana kami membantu berbagai pemilik bisnis melahirkan website
+        premium yang memperkuat kepercayaan pelanggan dan mendorong pertumbuhan
+        nyata.
+      </p>
+    </div>
+
+    {/* Right Column: Sliding Infinite Marquee Grid Stage */}
+    <div 
+      class="relative w-full overflow-hidden py-4 select-none reveal-on-scroll-scale"
+    >
+      {/* Edge Fading Shaders for Luxury Visual Depth */}
+      <div
+        class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#1E104E] via-[#1E104E]/30 to-transparent z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#1E104E] via-[#1E104E]/30 to-transparent z-10 pointer-events-none"
+      >
+      </div>
+
+      {/* Sliding Track wrapper */}
+      <div class="marquee-track">
+        {/* 1st Set */}
+        {
+          testimonials.map((item) => (
+            <article class="testimonial-card">
+              {/* Background Designer Watermark Quote Icon */}
+              <Quote className="absolute -bottom-2 -right-2 text-white/[0.03] w-16 h-16 pointer-events-none select-none z-0" />
+
+              <div class="relative z-10">
+                {/* User Profile Header */}
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-8 h-8 rounded-full bg-brand-coral/10 border border-brand-coral/20 text-brand-coral font-bold text-xs flex items-center justify-center shrink-0">
+                      {item.initials}
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="m-0 text-white text-[13.5px] sm:text-[14px] font-bold font-satoshi truncate leading-tight">
+                        {item.name}
+                      </h3>
+                      <span class="text-slate-400 text-[11px] font-inter font-medium leading-none block mt-0.5 truncate">
+                        {item.role}, {item.company}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Star Ratings */}
+                <div class="flex items-center gap-0.5 mb-2.5">
+                  {Array.from({ length: item.rating }).map(() => (
+                    <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Feedback Content */}
+              <p class="m-0 text-slate-300 text-[12.5px] sm:text-[13px] leading-relaxed font-inter italic font-medium whitespace-normal break-words relative z-10">
+                "{item.feedback}"
+              </p>
+
+              {/* Bottom Decoration: Meta Project Tag */}
+              <div class="flex items-center justify-between mt-3.5 relative z-10">
+                <span class="inline-flex items-center text-[9px] font-extrabold text-slate-400 bg-white/4 border border-white/8 px-2.5 py-0.5 rounded-full select-none uppercase tracking-wider">
+                  Proyek: {item.projectType}
+                </span>
+              </div>
+            </article>
+          ))
+        }
+
+        {/* 2nd Set (Duplicate loop for seamless transition) */}
+        {
+          testimonials.map((item) => (
+            <article class="testimonial-card">
+              {/* Background Designer Watermark Quote Icon */}
+              <Quote className="absolute -bottom-2 -right-2 text-white/[0.03] w-16 h-16 pointer-events-none select-none z-0" />
+
+              <div class="relative z-10">
+                {/* User Profile Header */}
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-8 h-8 rounded-full bg-brand-coral/10 border border-brand-coral/20 text-brand-coral font-bold text-xs flex items-center justify-center shrink-0">
+                      {item.initials}
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="m-0 text-white text-[13.5px] sm:text-[14px] font-bold font-satoshi truncate leading-tight">
+                        {item.name}
+                      </h3>
+                      <span class="text-slate-400 text-[11px] font-inter font-medium leading-none block mt-0.5 truncate">
+                        {item.role}, {item.company}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Star Ratings */}
+                <div class="flex items-center gap-0.5 mb-2.5">
+                  {Array.from({ length: item.rating }).map(() => (
+                    <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Feedback Content */}
+              <p class="m-0 text-slate-300 text-[12.5px] sm:text-[13px] leading-relaxed font-inter italic font-medium whitespace-normal break-words relative z-10">
+                "{item.feedback}"
+              </p>
+
+              {/* Bottom Decoration: Meta Project Tag */}
+              <div class="flex items-center justify-between mt-3.5 relative z-10">
+                <span class="inline-flex items-center text-[9px] font-extrabold text-slate-400 bg-white/4 border border-white/8 px-2.5 py-0.5 rounded-full select-none uppercase tracking-wider">
+                  Proyek: {item.projectType}
+                </span>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: infiniteMarquee 30s linear infinite;
+  }
+
+  /* Micro-interaction: Smooth pause on hover to allow reading client feedback */
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background-color: rgba(39, 24, 94, 0.75);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(255, 101, 63, 0.25);
+    box-shadow: 0 12px 28px rgba(255, 101, 63, 0.06);
+    transform: translateY(-2px);
+  }
+
+  @keyframes infiniteMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

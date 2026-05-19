@@ -1,0 +1,52 @@
+---
+import { services } from '../../data/siteConfig';
+import { ChevronDown, Check } from 'lucide-react';
+---
+
+<section class="section bg-transparent">
+	<div class="container">
+		<div 
+			class="max-w-[760px] mb-7 reveal-on-scroll"
+		>
+			<p class="section-kicker">Solutions</p>
+			<h2 class="section-heading-h2">Layanan website yang disusun untuk kebutuhan bisnis berbeda.</h2>
+		</div>
+
+		<div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+			{services.map((service, index) => (
+				<article 
+					class="p-6 border border-white/6 rounded-xl bg-brand-card/80 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-all duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
+					style={`transition-delay: ${index * 80}ms;`}
+				>
+					<h3 class="mb-2.5 text-white text-[16px] sm:text-[17px] font-bold leading-tight font-satoshi group-hover:text-brand-gold transition-colors duration-200">{service.title}</h3>
+					<p class="m-0 text-slate-300 text-[13.5px] sm:text-[14px] leading-relaxed font-inter">{service.description}</p>
+					
+					{/* Collapsible Dropdown for Features list */}
+					<details class="service-details group/services mt-5.5 border-t border-white/6 pt-4.5">
+						<summary class="flex items-center justify-between text-brand-gold font-satoshi font-bold text-[13.5px] sm:text-[14px] cursor-pointer hover:text-white transition-all duration-200 select-none list-none [&::-webkit-details-marker]:hidden">
+							<span>Lihat Detail Fitur</span>
+							<span class="transition-transform duration-300 group-open/services:rotate-180 text-brand-coral shrink-0">
+								<ChevronDown className="w-4 h-4" strokeWidth={2.5} />
+							</span>
+						</summary>
+						
+						<div class="accordion-grid-wrapper">
+							<div class="accordion-grid-inner">
+								<ul class="grid gap-3.5 pt-4 p-0 list-none">
+									{service.points.map((point) => (
+										<li class="flex items-start gap-2.5 text-slate-200 text-[13px] sm:text-[13.5px] leading-relaxed font-inter">
+											<Check className="w-4 h-4 text-brand-coral mt-0.5 shrink-0" strokeWidth={3.2} />
+											<span class="text-slate-300">
+												<strong class="text-white font-bold font-satoshi tracking-wide">{point.highlight}</strong> — {point.text}
+											</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</details>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,263 @@
+---
+import { MessageSquareMore } from "lucide-react";
+import { portfolioProjects, whatsappUrl } from "../../data/siteConfig";
+---
+
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="max-w-[760px] mb-7 reveal-on-scroll">
+      <p class="section-kicker">Portfolio</p>
+      <h2 class="section-heading-h2">
+        Visual premium, sedikit tapi fokus untuk menunjukkan kualitas arah
+        desain.
+      </h2>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div
+      class="flex flex-wrap items-center gap-2.5 mb-8 border-b border-white/5 pb-6 reveal-on-scroll"
+    >
+      <button
+        data-filter="all"
+        class="portfolio-tab active px-4 py-2 rounded-full border border-brand-coral bg-brand-coral/10 text-white text-[13px] sm:text-[13.5px] font-bold font-satoshi cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(255,101,63,0.12)]"
+      >
+        Semua
+      </button>
+      <button
+        data-filter="landing"
+        class="portfolio-tab px-4 py-2 rounded-full border border-white/6 bg-white/4 text-slate-300 text-[13px] sm:text-[13.5px] font-bold font-satoshi cursor-pointer hover:border-brand-coral/30 hover:text-white transition-all duration-300"
+      >
+        Landing Page
+      </button>
+      <button
+        data-filter="company"
+        class="portfolio-tab px-4 py-2 rounded-full border border-white/6 bg-white/4 text-slate-300 text-[13px] sm:text-[13.5px] font-bold font-satoshi cursor-pointer hover:border-brand-coral/30 hover:text-white transition-all duration-300"
+      >
+        Company Profile
+      </button>
+      <button
+        data-filter="custom"
+        class="portfolio-tab px-4 py-2 rounded-full border border-white/6 bg-white/4 text-slate-300 text-[13px] sm:text-[13.5px] font-bold font-satoshi cursor-pointer hover:border-brand-coral/30 hover:text-white transition-all duration-300"
+      >
+        Sistem Kustom
+      </button>
+    </div>
+
+    <!-- Symmetrical Grid -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+      id="portfolio-grid"
+    >
+      {
+        portfolioProjects.map((project, index) => (
+          <article
+            class="project-card col-span-1 overflow-hidden border border-white/6 rounded-2xl bg-brand-card/85 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)] group flex flex-col h-full reveal-on-scroll"
+            style={`--accent: ${project.accent}; transition-delay: ${index * 80}ms;`}
+            data-category={project.filterGroup}
+          >
+            <div class="relative bg-brand-bg overflow-hidden border-b border-white/6 flex flex-col shrink-0">
+              {/* Browser Header Bar */}
+              <div class="flex items-center justify-between h-[34px] px-3.5 bg-[rgba(26,17,54,0.9)] border-b border-white/5 select-none shrink-0">
+                {/* Traffic Lights */}
+                <div class="flex gap-1.5 items-center">
+                  <span class="w-2 h-2 rounded-full bg-[#FF5F56] opacity-90 shadow-[0_0_8px_rgba(255,95,86,0.2)]" />
+                  <span class="w-2 h-2 rounded-full bg-[#FFBD2E] opacity-90 shadow-[0_0_8px_rgba(255,189,46,0.2)]" />
+                  <span class="w-2 h-2 rounded-full bg-[#27C93F] opacity-90 shadow-[0_0_8px_rgba(39,201,63,0.2)]" />
+                </div>
+                {/* URL Bar */}
+                <div class="w-[50%] h-[18px] rounded bg-white/5 border border-white/5 flex items-center justify-center text-[9px] text-slate-400 font-inter font-medium tracking-wide">
+                  {project.url}
+                </div>
+                <div class="w-10" />
+              </div>
+
+              {/* Viewport with simple, elegant hover zoom image */}
+              <div class="relative h-[200px] sm:h-[220px] overflow-hidden bg-[rgba(20,13,44,0.5)]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-104"
+                  loading="lazy"
+                />
+                {/* Soft shading overlays */}
+                <div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-brand-bg/40 to-transparent pointer-events-none" />
+                <div class="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-brand-bg/40 to-transparent pointer-events-none" />
+              </div>
+            </div>
+
+            {/* Details Section */}
+            <div class="p-5 flex flex-col justify-between flex-grow">
+              <div>
+                <span class="block mb-2 text-brand-coral text-[11px] font-extrabold uppercase tracking-widest font-inter">
+                  {project.category}
+                </span>
+                <h3 class="mb-2 text-white text-[16px] sm:text-[17px] font-bold leading-tight font-satoshi group-hover:text-brand-gold transition-colors duration-200">
+                  {project.title}
+                </h3>
+                <p class="m-0 text-slate-300 text-[13.5px] sm:text-[14px] leading-relaxed font-inter">
+                  {project.description}
+                </p>
+              </div>
+
+              <div class="border-t border-white/6 pt-4 mt-auto">
+                <a
+                  class="w-full py-2.5 rounded-xl bg-emerald-500 border border-emerald-500 text-white hover:bg-white hover:text-emerald-500 font-bold text-[13.5px] sm:text-[14px] flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_4px_12px_rgba(16,185,129,0.15)] hover:shadow-[0_8px_20px_rgba(16,185,129,0.25)] font-satoshi tracking-wide"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>Diskusikan Style Ini</span>
+                  <MessageSquareMore />
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Show More Button -->
+    <div class="flex justify-center mt-10" id="show-more-container">
+      <button
+        id="btn-show-more"
+        class="px-6 py-3 rounded-full border border-brand-coral/40 bg-brand-coral/6 text-white text-[14px] font-bold font-satoshi cursor-pointer shadow-lg hover:border-brand-coral hover:bg-brand-coral/15 hover:shadow-[0_8px_24px_rgba(255,101,63,0.15)] hover:-translate-y-0.5 transition-all duration-300"
+      >
+        Lihat Semua Karya (+)
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initPortfolio() {
+    const grid = document.getElementById("portfolio-grid");
+    if (!grid) return;
+
+    const cards = Array.from(
+      grid.querySelectorAll(".project-card"),
+    ) as HTMLElement[];
+    const tabs = document.querySelectorAll(".portfolio-tab");
+    const showMoreBtn = document.getElementById("btn-show-more");
+    const showMoreContainer = document.getElementById("show-more-container");
+
+    let showAll = false;
+    let currentFilter = "all";
+
+    // Setup active state style helper
+    function setActiveTab(tab: HTMLElement) {
+      tabs.forEach((t) => {
+        t.classList.remove(
+          "active",
+          "border-brand-coral",
+          "bg-brand-coral/10",
+          "text-white",
+        );
+        t.classList.add("border-white/6", "bg-white/4", "text-slate-300");
+        t.removeAttribute("style");
+      });
+
+      tab.classList.remove("border-white/6", "bg-white/4", "text-slate-300");
+      tab.classList.add(
+        "active",
+        "border-brand-coral",
+        "bg-brand-coral/10",
+        "text-white",
+      );
+      tab.style.boxShadow = "0 4px 12px rgba(255,101,63,0.12)";
+    }
+
+    // Function to update visual grid states
+    function updateGrid() {
+      // If filter is 'all'
+      if (currentFilter === "all") {
+        if (showAll) {
+          cards.forEach((card) => {
+            card.style.display = "flex";
+            // Ensure they trigger observer or display immediately
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          });
+          if (showMoreContainer) showMoreContainer.style.display = "none";
+        } else {
+          cards.forEach((card, index) => {
+            if (index < 3) {
+              card.style.display = "flex";
+              // If already animated, keep it visible
+              if (
+                !card.classList.contains("reveal-on-scroll") ||
+                card.classList.contains("in-view")
+              ) {
+                card.style.opacity = "1";
+                card.style.transform = "none";
+              }
+            } else {
+              card.style.display = "none";
+            }
+          });
+          if (showMoreContainer) showMoreContainer.style.display = "flex";
+        }
+      } else {
+        // Hide "Show More" when filtering specific categories
+        if (showMoreContainer) showMoreContainer.style.display = "none";
+
+        // Filter cards
+        cards.forEach((card) => {
+          const category = card.getAttribute("data-category");
+          if (category === currentFilter) {
+            card.style.display = "flex";
+            // Instantly reveal and add clean animation feel
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+    }
+
+    // Handle category tab clicks
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const filter = tab.getAttribute("data-filter") || "all";
+        currentFilter = filter;
+        setActiveTab(tab as HTMLElement);
+
+        // Reset showAll state on filter switch
+        if (filter === "all") {
+          showAll = false;
+        }
+
+        updateGrid();
+      });
+    });
+
+    // Handle Show More button click
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener("click", () => {
+        showAll = true;
+        updateGrid();
+
+        // Smoothly reveal new cards with pure CSS transition trigger
+        const newCards = cards.slice(3);
+        newCards.forEach((card, i) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(15px) scale(0.98)";
+          // Force layout repaint
+          void card.offsetHeight;
+
+          card.style.transition = `opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1)`;
+          card.style.transitionDelay = `${i * 60}ms`;
+          card.style.opacity = "1";
+          card.style.transform = "none";
+        });
+      });
+    }
+
+    // Initial grid update
+    updateGrid();
+  }
+
+  // Initialize on page load & Page Transitions (Astro compat)
+  document.addEventListener("DOMContentLoaded", initPortfolio);
+  document.addEventListener("astro:page-load", initPortfolio);
+</script>

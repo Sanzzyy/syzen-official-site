@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+
+const {
+	title = 'Syzen Web | Modern Website Solutions',
+	description = 'Syzen Web membantu UMKM, company profile, dan bisnis kreatif memiliki website modern, cepat, responsive, dan mudah dipercaya customer.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#FF653F" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+
+		<script>
+			const initScrollReveal = () => {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							// Unobserve once animated to free memory
+							observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					rootMargin: '0px 0px -12% 0px',
+					threshold: 0.02
+				});
+
+				const elements = document.querySelectorAll(
+					'.reveal-on-scroll, .reveal-on-scroll-left, .reveal-on-scroll-scale'
+				);
+				elements.forEach((el) => observer.observe(el));
+			};
+
+			const initAccordions = () => {
+				document.querySelectorAll('details').forEach((details) => {
+					if (details.dataset.accordionBound) return;
+					details.dataset.accordionBound = 'true';
+
+					const summary = details.querySelector('summary');
+					const wrapper = details.querySelector('.accordion-grid-wrapper');
+					if (!summary || !wrapper) return;
+
+					summary.addEventListener('click', (e) => {
+						// If details is currently open, we animate closing
+						if (details.open) {
+							e.preventDefault();
+							details.classList.add('collapsing');
+							
+							// Wait for the transition to finish
+							setTimeout(() => {
+								details.open = false;
+								details.classList.remove('collapsing');
+							}, 350);
+						} else {
+							// Collapse other open siblings inside the same parent container
+							const parent = details.parentElement;
+							if (parent) {
+								const openSiblings = parent.querySelectorAll('details[open]');
+								openSiblings.forEach((sibling) => {
+									if (sibling !== details) {
+										sibling.classList.add('collapsing');
+										setTimeout(() => {
+											sibling.open = false;
+											sibling.classList.remove('collapsing');
+										}, 350);
+									}
+								});
+							}
+						}
+					});
+				});
+			};
+
+			const setupAll = () => {
+				initScrollReveal();
+				initAccordions();
+			};
+
+			// Initialize on mount
+			setupAll();
+
+			// Re-run on Astro view transition swaps and page loads
+			document.addEventListener('astro:after-swap', setupAll);
+			document.addEventListener('astro:page-load', setupAll);
+		</script>
+	</body>
+</html>

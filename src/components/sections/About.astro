@@ -1,0 +1,305 @@
+---
+import { processSteps } from "../../data/siteConfig";
+import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
+---
+
+<section class="section" id="about">
+  <div class="container space-y-16">
+    {/* Part A: Personal Branding & Accordion Dropdown */}
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 xl:gap-16 items-center"
+    >
+      {/* Left Column: Portrait Image Card */}
+      <div
+        class="relative w-full max-w-[360px] md:max-w-[400px] aspect-[4/5] mx-auto lg:mr-auto rounded-2xl border border-white/8 bg-brand-card p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300 hover:border-brand-coral/30 reveal-on-scroll-left"
+      >
+        {/* User Profile Image */}
+        <img
+          src="/assets/foto/foto_me.jpeg"
+          alt="Sanzzyy Profile"
+          class="w-full h-full object-cover rounded-xl transition-all duration-300"
+          loading="lazy"
+        />
+
+        {/* Overlapping Floating Badge (Name Card) */}
+        <div
+          class="absolute bottom-6 left-6 right-6 px-5 py-3.5 border border-white/10 rounded-xl bg-brand-bg/90 backdrop-blur-md flex flex-col gap-0.5 shadow-2xl"
+        >
+          <h4
+            class="m-0 text-white font-satoshi font-bold text-[15.5px] tracking-wide"
+          >
+            Sanzzyy
+          </h4>
+          <p
+            class="m-0 text-brand-gold font-inter text-[11px] font-semibold tracking-widest uppercase"
+          >
+            Fullstack Developer
+          </p>
+        </div>
+      </div>
+
+      {/* Right Column: Interactive Dropdown / Accordion */}
+      <div 
+        class="grid justify-items-start text-left w-full reveal-on-scroll"
+      >
+        <p class="section-kicker">Meet The Creator</p>
+        <h2 class="section-heading-h2">
+          Membangun Kepercayaan Lewat Keahlian Personal
+        </h2>
+        <p class="section-heading-p mb-7">
+          Di balik Syzen Web, ada dedikasi personal untuk membantu bisnis Anda
+          tampil menonjol. Kami memadukan visi desain yang kuat dengan kode
+          berkualitas tinggi untuk menciptakan website berkinerja tinggi.
+        </p>
+
+        {/* Details Dropdowns Accordion */}
+        <div class="space-y-3.5 w-full">
+          {/* Item 1 */}
+          <details
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+            open
+          >
+            <summary
+              class="flex items-center justify-between p-4.5 cursor-pointer list-none select-none text-white hover:text-brand-gold transition-colors duration-200"
+            >
+              <div class="flex items-center gap-3.5">
+                <span
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  >01</span
+                >
+                <span
+                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  >Siapa di Balik Syzen Web?</span
+                >
+              </div>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+              >
+                <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+            </summary>
+            <div class="accordion-grid-wrapper border-t border-white/4">
+              <div class="accordion-grid-inner">
+                <div
+                  class="px-4.5 pb-4.5 pt-4 text-slate-300 text-[13.8px] md:text-[14.5px] leading-relaxed font-inter"
+                >
+                  Halo, saya Muhammad Sajid Izzulhaq. Berbekal latar belakang di
+                  bidang Teknik Informatika, fokus utama saya adalah membantu
+                  pemilik UMKM dan bisnis lokal untuk melangkah ke dunia digital.
+                  Saya percaya bahwa website yang baik bukan sekadar tampil
+                  menarik, tapi harus bisa menjadi solusi yang memudahkan
+                  operasional dan mendukung pertumbuhan bisnis Anda.
+                </div>
+              </div>
+            </div>
+          </details>
+
+          {/* Item 2 */}
+          <details
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+          >
+            <summary
+              class="flex items-center justify-between p-4.5 cursor-pointer list-none select-none text-white hover:text-brand-gold transition-colors duration-200"
+            >
+              <div class="flex items-center gap-3.5">
+                <span
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  >02</span
+                >
+                <span
+                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  >Komitmen & Pendekatan Kerja</span
+                >
+              </div>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+              >
+                <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+            </summary>
+            <div class="accordion-grid-wrapper border-t border-white/4">
+              <div class="accordion-grid-inner">
+                <div
+                  class="px-4.5 pb-4.5 pt-4 text-slate-300 text-[13.8px] md:text-[14.5px] leading-relaxed font-inter"
+                >
+                  Saya mengedepankan komunikasi yang transparan, ramah, dan
+                  kolaboratif. Bekerja sama dengan saya berarti Anda berdiskusi
+                  langsung dengan pengembangnya. Saya siap mendengarkan visi
+                  bisnis Anda, menjelaskan hal teknis dengan bahasa yang mudah
+                  dipahami, dan memastikan website selesai tepat waktu sesuai
+                  kebutuhan.
+                </div>
+              </div>
+            </div>
+          </details>
+
+          {/* Item 3 */}
+          <details
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+          >
+            <summary
+              class="flex items-center justify-between p-4.5 cursor-pointer list-none select-none text-white hover:text-brand-gold transition-colors duration-200"
+            >
+              <div class="flex items-center gap-3.5">
+                <span
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  >03</span
+                >
+                <span
+                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  >Teknologi Modern & Speed</span
+                >
+              </div>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+              >
+                <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+            </summary>
+            <div class="accordion-grid-wrapper border-t border-white/4">
+              <div class="accordion-grid-inner">
+                <div
+                  class="px-4.5 pb-4.5 pt-4 text-slate-300 text-[13.8px] md:text-[14.5px] leading-relaxed font-inter"
+                >
+                  Kami membangun web menggunakan tumpukan teknologi modern
+                  berkecepatan tinggi seperti Astro, React, dan Tailwind CSS.
+                  Hasilnya adalah website statis super ringan, SEO ramah mesin
+                  pencari, serta integrasi tombol Call-to-Action WhatsApp yang
+                  sangat responsif.
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    {/* Part B: Workflow / Process Grid */}
+    <div class="pt-12 border-t border-white/8">
+      <div 
+        class="max-w-[760px] mb-10 reveal-on-scroll"
+      >
+        <p class="section-kicker">Our Workflow</p>
+        <h3
+          class="text-white text-xl sm:text-2xl font-satoshi font-bold leading-tight"
+        >
+          Alur Kerja yang Transparan & Terarah
+        </h3>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 xl:gap-6 w-full"
+      >
+        {
+          processSteps.map((step, index) => (
+            <article 
+              class="relative grid gap-2.5 align-content-start p-5 border border-white/6 rounded-xl bg-brand-card/80 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-all duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
+              style={`transition-delay: ${index * 80}ms;`}
+            >
+              {/* Card Header: Number Badge and Title side-by-side to maximize space */}
+              <div class="flex items-center gap-3.5 mb-1 shrink-0">
+                <span class="w-8.5 h-8.5 rounded-full bg-brand-coral/10 border border-brand-coral/25 flex items-center justify-center text-brand-coral font-satoshi font-extrabold text-[14px] shadow-[0_0_12px_rgba(255,101,63,0.1)] shrink-0">
+                  {step.number}
+                </span>
+                <h3 class="text-white text-[14.5px] sm:text-[15px] font-bold leading-snug font-satoshi tracking-wide group-hover:text-brand-gold transition-colors duration-200">
+                  {step.title}
+                </h3>
+              </div>
+
+              {/* Card Description */}
+              <p class="m-0 text-slate-300 text-[13px] sm:text-[13.5px] leading-relaxed font-inter">
+                {step.description}
+              </p>
+
+              {/* Connector Arrows (Visual Pathway Route) placed directly under article to center vertically */}
+              {index === 0 && (
+                <>
+                  {/* Desktop & Tablet: Horizontal arrow centered vertically in the middle of the card side */}
+                  <div
+                    class="hidden sm:flex items-center justify-center absolute top-1/2 -translate-y-1/2 -translate-x-2 left-full w-6 lg:w-5 xl:w-6 h-8 z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                  {/* Mobile: Vertical arrow pointing down under the bottom center of the card */}
+                  <div
+                    class="sm:hidden absolute left-1/2 -translate-x-1/2 top-full h-6 flex items-center justify-center z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowDown
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                </>
+              )}
+
+              {index === 1 && (
+                <>
+                  {/* Desktop: Horizontal arrow pointing right */}
+                  <div
+                    class="hidden lg:flex items-center justify-center absolute top-1/2 -translate-y-1/2 -translate-x-2 left-full w-5 xl:w-6 h-8 z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                  {/* Tablet: Vertical arrow pointing down for 2-column wrapping */}
+                  <div
+                    class="hidden sm:flex lg:hidden absolute left-1/2 -translate-x-1/2 top-full h-6 flex items-center justify-center z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowDown
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                  {/* Mobile: Vertical arrow pointing down */}
+                  <div
+                    class="sm:hidden absolute left-1/2 -translate-x-1/2 top-full h-6 flex items-center justify-center z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowDown
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                </>
+              )}
+
+              {index === 2 && (
+                <>
+                  {/* Desktop & Tablet: Horizontal arrow pointing right */}
+                  <div
+                    class="hidden sm:flex items-center justify-center absolute top-1/2 -translate-y-1/2 -translate-x-2 left-full w-6 lg:w-5 xl:w-6 h-8 z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                  {/* Mobile: Vertical arrow pointing down */}
+                  <div
+                    class="sm:hidden absolute left-1/2 -translate-x-1/2 top-full h-6 flex items-center justify-center z-20 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <ArrowDown
+                      className="w-5 h-5 text-brand-gold"
+                      strokeWidth={3.2}
+                    />
+                  </div>
+                </>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

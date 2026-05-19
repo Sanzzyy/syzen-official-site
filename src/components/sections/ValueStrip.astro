@@ -1,0 +1,29 @@
+---
+import { valueHighlights } from '../../data/siteConfig';
+import { Check } from 'lucide-react';
+---
+
+<section class="py-3 -mt-8 relative z-10">
+	<div class="container">
+		<div 
+			class="bg-[rgba(39,24,94,0.65)] backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-4.5 md:px-10 md:py-6 flex flex-wrap justify-around items-center gap-4 md:gap-0 shadow-[0_20px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] reveal-on-scroll"
+		>
+			{valueHighlights.map((item, index) => (
+				<>
+					{index > 0 && <div class="hidden md:block w-1.5 h-1.5 rounded-full bg-white/15 select-none" aria-hidden="true"></div>}
+					<div class="flex items-center gap-3">
+						{/* Premium Custom Coral Checkmark Badge */}
+						<div class="w-7 h-7 rounded-full bg-brand-coral/12 flex items-center justify-center border border-brand-coral/20 shadow-[0_0_12px_rgba(255,101,63,0.1)] shrink-0">
+							<Check className="w-3.5 h-3.5 text-brand-coral" strokeWidth={3.5} />
+						</div>
+						
+						{/* Clean High-Contrast Premium White Text */}
+						<span class="text-slate-100 font-satoshi font-extrabold text-[14px] md:text-[15.2px] tracking-wide">
+							{item}
+						</span>
+					</div>
+				</>
+			))}
+		</div>
+	</div>
+</section>

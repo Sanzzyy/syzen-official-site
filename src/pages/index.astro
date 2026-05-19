@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import ValueStrip from '../components/sections/ValueStrip.astro';
+import About from '../components/sections/About.astro';
+import Services from '../components/sections/Services.astro';
+import Portfolio from '../components/sections/Portfolio.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import ContactCTA from '../components/sections/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+	title="Syzen Web | Jasa Pembuatan Website Modern"
+	description="Syzen Web membantu UMKM, company profile, dan bisnis kreatif memiliki website modern, cepat, responsive, dan mudah dipercaya customer."
+>
+	<div class="site-shell">
+		<Header />
+
+		<main id="top">
+			<Hero />
+			<ValueStrip />
+			<About />
+			<Services />
+			<Portfolio />
+			<Pricing />
+			<Testimonials />
+			<ContactCTA />
+		</main>
+
+		<Footer />
+	</div>
+</Layout>
